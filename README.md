@@ -7,7 +7,8 @@
 - Python 3.11以上
 - Poetry
 - OpenAI API Key
-- Langfuse アカウント
+- Docker と Docker Compose
+- Langfuse アカウント（Self-hostedの場合は不要）
 
 ## セットアップ
 
@@ -30,12 +31,23 @@ LANGFUSE_SECRET_KEY=your_langfuse_secret_key_here
 LANGFUSE_HOST=http://localhost:3000
 ```
 
+### Langfuseのセットアップ（Self-hosted）
+
+1. Langfuseを起動します：
+```bash
+docker compose up -d
+```
+
+2. Langfuseの管理画面（http://localhost:3000）にアクセスし、初期設定を行います。
+   - 最初のユーザーを作成
+   - プロジェクトを作成
+   - API Keysから必要なキーを取得
+
 ### Langfuseキーの取得方法
 
 1. [Langfuse](https://langfuse.com)にアクセスしてアカウントを作成します
-1. 新しいプロジェクトを作成します
-1. プロジェクトを新規作成します
-1. プロジェクトの設定画面から、以下のキーを取得します：
+2. 新しいプロジェクトを作成します
+3. プロジェクトの設定画面から、以下のキーを取得します：
    - Public Key (`pk-lf-` で始まる)
    - Secret Key (`sk-lf-` で始まる)
 
